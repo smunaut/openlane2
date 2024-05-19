@@ -20,6 +20,7 @@
   opensta,
   boost183,
   eigen,
+  cudd,
   tcl,
   python3,
   readline,
@@ -42,8 +43,8 @@
   bison,
   clang-tools_14,
   ioplace-parser,
-  rev ? "a515fc6cc97a7092efd51a28c1414e2fb4e53413",
-  sha256 ? "sha256-uZGqGhYg1ofyAd6aH94HS4sJNOJz6oWArHzUriPV3EQ=",
+  rev ? "78be83bc3d1b3a2a4fc03db99b2ebad18d95a381",
+  sha256 ? "sha256-ImKG3mvV77yRsj6Qck04hRk7ZmpuxhFMqYyqhkS9kz8=",
 }: let
   pyenv = python3.withPackages (p:
     with p; [
@@ -59,7 +60,7 @@ in
     inherit rev;
 
     src = fetchFromGitHub {
-      owner = "The-OpenROAD-Project";
+      owner = "smunaut";
       repo = "OpenROAD";
       inherit rev;
       inherit sha256;
@@ -97,6 +98,7 @@ in
       openroad-abc
       boost183
       eigen
+      cudd
       tcl
       pyenv
       readline
@@ -117,7 +119,6 @@ in
     ];
 
     patches = [
-      ./patches/openroad/rmp_abc.patch
     ];
 
     nativeBuildInputs = [

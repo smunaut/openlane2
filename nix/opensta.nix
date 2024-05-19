@@ -24,8 +24,9 @@
   tcl,
   zlib,
   eigen,
-  rev ? "ee8d3d0fa23bfbc69f3e936ff884c3d30f5bfb59",
-  sha256 ? "sha256-ZLCXEmuSxGnht/ILLQSpOGHlJiDHo6gHUp+ZjV+6wxQ=",
+  cudd,
+  rev ? "b5f3a02b33b8ae1739ace8a329fde94434711dd6",
+  sha256 ? "sha256-s9Qn8Hkxuzvx7sZdaa/RX8X4Rp4w/kTVdnrmsRvC8wo=",
 }:
 clangStdenv.mkDerivation rec {
   name = "opensta";
@@ -44,6 +45,7 @@ clangStdenv.mkDerivation rec {
   ];
 
   buildInputs = [
+    cudd
     eigen
     tcl
     zlib
