@@ -1081,11 +1081,12 @@ def get_psm_error_count(rpt: io.TextIOWrapper) -> int:
     # Turn almost-YAML into YAML
     VIO_TYPE_PFX = "violation type: "
     for line in rpt:
+        line = line.replace('\t', '  ')
         if line.startswith(VIO_TYPE_PFX):
             vio_type = line[len(VIO_TYPE_PFX) :].strip()
             sio.write(f"- type: {vio_type}\n")
         elif "bbox = " in line:
-            sio.write(line.replace("bbox = ", "- bbox ="))
+            sio.write(line.replace("bbox = ", "bbox: "))
         else:
             sio.write(line)
 
