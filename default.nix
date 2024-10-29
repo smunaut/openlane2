@@ -20,6 +20,7 @@
   # Tools
   klayout,
   klayout-pymod,
+  gdstk,
   libparse,
   immutabledict,
   magic,
@@ -117,6 +118,7 @@ buildPythonPackage rec {
       libparse
       psutil
       klayout-pymod
+      gdstk
       
       # Ruby
       ruby
