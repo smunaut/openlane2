@@ -107,6 +107,11 @@ class DesignFormat(Enum):
         "spice",
         "Simulation Program with Integrated Circuit Emphasis",
     )
+    CDL: DesignFormatObject = DesignFormatObject(
+        "cdl",
+        "cdl",
+        "Circuit Design Language",
+    )
 
     MAG: DesignFormatObject = DesignFormatObject(
         "mag",
